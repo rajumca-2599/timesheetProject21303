@@ -1,0 +1,45 @@
+<div >
+
+  <div class="head">
+
+    <marquee>
+      <h1> Ojas Innovative Technologies</h1>
+    </marquee>
+  </div>
+  <div class="resp">
+    <div class="row">
+      <div  class="col-sm">
+      <img src="../../assets/logo1.png">
+      </div>
+
+      <div  class="col-sm" >
+      <form [formGroup]="loginform" >
+        <div class="appcmp">
+          <div>
+            <label for="first-name"> EmployeeName: </label><br>
+            <input id="first-name" type="text" formControlName="EmployeeName" class="form-control"
+              placeholder="employeeName"> <br>
+            <span *ngIf="loginform.get('EmployeeName')?.errors && loginform.get('EmployeeName')?.touched "
+              id="demo"><strong>*name Required</strong></span>
+            <!-- <span *ngIf="loginform.get('Name')?.errors?.maxlength" >*name should be maximum 10</span> -->
+          </div>
+          <div>
+            <label for="employeeid">Employee Id: </label><br>
+            <input id="employeeid" type="text" formControlName="employeeid" class="form-control"
+              placeholder="employeeid"> <br>
+            <span *ngIf="loginform.get('employeeid')?.errors && loginform.get('employeeid')?.touched "
+              id="demo"><strong>*employeeid is Required</strong></span>
+            <!-- <span *ngIf="loginform.get('password')?.errors?.minlength" >*password should be minimum 4</span> -->
+          </div>
+          <div>
+            <button class="btn btn-danger btn-lg" id="example" [disabled]="!loginform.valid"
+              (click)="submited()">submit</button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+
+</div>
